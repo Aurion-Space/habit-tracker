@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+frontend/dist/
+backend/dist/
+
+# Runtime data
+backend/data/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa*
+*_rsa
+*_ed25519
+
+# Deployment/private infrastructure notes
+deployment/
+deploy/
+*.service
+*.conf.local
+cloudflare-*.txt
+dns-*.txt
+deployment-*.md
+security-*.md
+
+# Backups and generated artifacts
+*.bak
+*.bak.*
+*.log
+coverage/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+nul
+.vscode/
+.idea/

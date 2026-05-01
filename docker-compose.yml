@@ -1,0 +1,25 @@
+services:
+  frontend:
+    build: ./frontend
+    container_name: habit-tracker-frontend
+    restart: unless-stopped
+    networks: [ai-apps]
+
+  backend:
+    build: ./backend
+    container_name: habit-tracker-backend
+    restart: unless-stopped
+    environment:
+      PORT: "3333"
+      DATABASE_PATH: /data/habits.db
+      JWT_SECRET: ${JWT_SECRET}
+    volumes:
+      - habit-tracker-db-data:/data
+    networks: [ai-apps]
+
+networks:
+  ai-apps:
+    external: true
+
+volumes:
+  habit-tracker-db-data:
